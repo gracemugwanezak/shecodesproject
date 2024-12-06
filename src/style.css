@@ -1,12 +1,22 @@
+/* General Styles */
 body {
   background-color: #f9f7fe;
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+/* Links */
 a {
   color: #885df1;
+  text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+/* Weather App Container */
 .weather-app {
   background: white;
   max-width: 600px;
@@ -14,13 +24,20 @@ a {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 16px;
   padding: 30px;
+  transition: box-shadow 0.3s ease;
 }
 
+.weather-app:hover {
+  box-shadow: 0 40px 60px rgba(65, 50, 100, 0.15);
+}
+
+/* Header Section */
 header {
   border-bottom: 1px solid #f9f7fe;
   padding: 0 0 30px 0;
 }
 
+/* Search Form */
 .search-form-input {
   background-color: #f9f7fe;
   border: none;
@@ -28,6 +45,12 @@ header {
   width: 80%;
   font-size: 16px;
   padding: 15px 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-form-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #885df1;
 }
 
 .search-form-button {
@@ -38,8 +61,15 @@ header {
   margin-left: 5px;
   border-radius: 6px;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.search-form-button:hover {
+  background: #7342c8;
+}
+
+/* Main Content */
 main {
   padding: 30px 0;
 }
@@ -47,6 +77,7 @@ main {
 .weather-app-data {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .weather-app-city {
@@ -57,9 +88,10 @@ main {
 
 .weather-app-details {
   font-size: 16px;
-  color: rgba(39, 33, 66, 0.4);
+  color: rgba(39, 33, 66, 0.6);
   line-height: 24px;
   font-weight: 500;
+  margin-top: 10px;
 }
 
 .weather-app-details strong {
@@ -68,11 +100,14 @@ main {
 
 .weather-app-temperature-container {
   display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.weather-app-icon {
+.weather-app-icon img {
   width: 88px;
   height: 88px;
+  object-fit: contain;
 }
 
 .weather-app-temperature {
@@ -84,12 +119,33 @@ main {
 .weatehr-app-unit {
   margin-top: 6px;
   font-size: 28px;
+  font-weight: bold;
+  color: #885df1;
 }
 
+/* Footer Section */
 footer {
   border-top: 1px solid #f9f7fe;
   padding: 30px 0 0 0;
   text-align: center;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
+}
+
+footer a {
+  color: #885df1;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Error Messages */
+#error-message {
+  color: #f65282;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
 }
